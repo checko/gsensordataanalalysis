@@ -1,4 +1,5 @@
 import math
+import matplotlib.pyplot as pp
 
 fp = open('./gvalue0.txt','r')
 line = fp.readline(); # skip one line
@@ -14,3 +15,5 @@ while line:
 	print(x,y,z,round(g,2))
 	line = fp.readline().strip();
 print(gdata)
+pp.plot(gdata)
+pp.show()
