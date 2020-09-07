@@ -19,5 +19,12 @@ while line:
 	print(x,y,z,round(g,2))
 	line = fp.readline().strip();
 print(gdata)
-pp.plot(gdata)
+if(len(sys.argv)==4):
+	start = int(sys.argv[2])
+	end = int(sys.argv[3])
+	pp.plot(gdata[start:end])
+else:
+	start = 0
+	end = len(gdata)
+pp.plot(gdata[start:end])
 pp.show()
