@@ -1,7 +1,11 @@
 import math
 import matplotlib.pyplot as pp
+import sys
 
-fp = open('./gvalue0.txt','r')
+if (len(sys.argv) < 2):
+	print('no data file\n')
+	exit()
+fp = open(sys.argv[1],'r')
 line = fp.readline(); # skip one line
 gdata = []
 line = fp.readline().strip();
