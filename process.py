@@ -9,6 +9,6 @@ while line:
 	y = float(values[1]);
 	z = float(values[2]);
 	g = math.sqrt(x**2 + y**2 + z**2)
-	print(x,y,z,g)
+	print(x,y,z,round(g,2))
 	line = fp.readline().strip();
 
