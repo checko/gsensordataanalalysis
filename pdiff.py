@@ -20,7 +20,7 @@ while line:
 	z = float(values[2])
 	gdiff.append([x-xp, y-yp, z-zp])
 	if ( (x-xp) != 0 ):
-		print(1,round((y-yp)/(x-xp),2), round((z-zp)/(x-xp),2), round(x-xp,2),round(y-yp,2),round(z-zp,2))
+            print('{:5.2f} {:5.2f} {:5.2f} {:5.2f} {:5.2f} {:5.2f}'.format(1,round((y-yp)/(x-xp),2), round((z-zp)/(x-xp),2), round(x-xp,2),round(y-yp,2),round(z-zp,2)))
 	elif ((x-xp)==0 and (y-yp)==0 and (z-zp)==0):
 		print(round(x,2),round(y,2),round(z,2))
 	else:	
