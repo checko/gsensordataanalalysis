@@ -27,4 +27,5 @@ else:
 	start = 0
 	end = len(gdata)
 pp.plot(gdata[start:end])
+pp.ylim((4,16))
 pp.show()
