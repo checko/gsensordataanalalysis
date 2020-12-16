@@ -9,6 +9,7 @@ if (len(sys.argv) < 2):
 fp = open(sys.argv[1],'r')
 vdata = []
 xdata = []
+ydata = []
 line = fp.readline()
 print(line)
 while line:
