@@ -1,5 +1,5 @@
 import math
-import matplotlib.pyplot as pp
+import matplotlib.pyplot as plt
 import sys
 
 if (len(sys.argv) < 2):
@@ -7,7 +7,8 @@ if (len(sys.argv) < 2):
     exit()
 
 fp = open(sys.argv[1],'r')
-gdata = []
+vdata = []
+xdata = []
 line = fp.readline()
 print(line)
 while line:
@@ -16,7 +17,13 @@ while line:
     y = float(value[1])
     z = float(value[2])
     v = float(value[4])
-    gdata.append(v)
+    vdata.append(v)
+    xdata.append(x)
     line = fp.readline()
-pp.plot(gdata)
-pp.show()
+fig, ax1 = plt.subplots(1,1)
+ax2 = ax1.twinx()
+
+ax1.plot(vdata,color='r',alpha=0.5)
+ax2.plot(xdata,alpha=0.5)
+
+plt.show()
