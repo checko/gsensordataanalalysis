@@ -27,6 +27,7 @@ while line:
 fig, ax1 = plt.subplots(1,1)
 ax2 = ax1.twinx()
 
+ax1.set_ylim([-5,80])
 ax1.plot(vdata,color='r',alpha=0.5)
 ax2.plot(xdata,alpha=0.5)
 ax2.plot(ydata,color='b',alpha=0.5)
