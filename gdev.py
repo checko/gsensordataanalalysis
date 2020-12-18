@@ -26,9 +26,13 @@ while line:
     zdata.append(z)
     line = fp.readline()
 
-xdev = [];
+xdev = []
+ydev = []
+zdev = []
 for i in range(5,len(vdata)):
     xdev.append(np.std(np.array(xdata[i-5:i]),ddof=1))
+    ydev.append(np.std(np.array(ydata[i-5:i]),ddof=1))
+    zdev.append(np.std(np.array(zdata[i-5:i]),ddof=1))
 
 start=0
 end=len(xdev)
@@ -44,6 +48,8 @@ ax1.set_ylim([-5,80])
 ax1.plot(vdata[start+5:end+5],color='r',alpha=0.6)
 
 ax2.plot(xdev[start:end],color='b',alpha=0.6)
+ax2.plot(ydev[start:end],color='g',alpha=0.6)
+ax2.plot(zdev[start:end],color='k',alpha=0.6)
 
 plt.show()
 
