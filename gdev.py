@@ -26,14 +26,16 @@ while line:
     zdata.append(z)
     line = fp.readline()
 
+drang=8
+
 xdev = []
 ydev = []
 zdev = []
 sdev = []
-for i in range(5,len(vdata)):
-    xdev.append(np.std(np.array(xdata[i-5:i]),ddof=1))
-    ydev.append(np.std(np.array(ydata[i-5:i]),ddof=1))
-    zdev.append(np.std(np.array(zdata[i-5:i]),ddof=1))
+for i in range(drang,len(vdata)):
+    xdev.append(np.std(np.array(xdata[i-drang:i]),ddof=1))
+    ydev.append(np.std(np.array(ydata[i-drang:i]),ddof=1))
+    zdev.append(np.std(np.array(zdata[i-drang:i]),ddof=1))
 
 
 sdev = xdev + ydev + zdev
@@ -49,7 +51,7 @@ fig, ax1 = plt.subplots(1,1)
 ax2 = ax1.twinx()
 
 ax1.set_ylim([-5,80])
-ax1.plot(vdata[start+5:end+5],color='r',alpha=0.7)
+ax1.plot(vdata[start+drang:end+drang],color='r',alpha=0.7)
 
 ax2.plot(sdev[start:end],color='b',alpha=0.5)
 
