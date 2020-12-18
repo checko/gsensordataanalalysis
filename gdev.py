@@ -38,7 +38,8 @@ for i in range(drang,len(vdata)):
     zdev.append(np.std(np.array(zdata[i-drang:i]),ddof=1))
 
 
-sdev = xdev + ydev + zdev
+for i in range(len(xdev)):
+    sdev.append(xdev[i] + ydev[i] + zdev[i])
 
 start=0
 end=len(xdev)
@@ -56,4 +57,17 @@ ax1.plot(vdata[start+drang:end+drang],color='r',alpha=0.7)
 ax2.plot(sdev[start:end],color='b',alpha=0.5)
 
 plt.show()
+
+
+
+print(len(sdev))
+print(len(vdata))
+min=100
+for i in range(len(sdev)):
+    if(vdata[i+drang]==0):
+        if(sdev[i]<min):
+            min = sdev[i]
+
+print(min)
+
 
