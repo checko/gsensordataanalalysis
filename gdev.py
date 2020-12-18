@@ -26,7 +26,7 @@ while line:
     zdata.append(z)
     line = fp.readline()
 
-drang=8
+drang=10
 
 xdev = []
 ydev = []
@@ -51,23 +51,29 @@ if(len(sys.argv)==4):
 fig, ax1 = plt.subplots(1,1)
 ax2 = ax1.twinx()
 
-ax1.set_ylim([-5,80])
+#ax1.set_ylim([-5,80])
 ax1.plot(vdata[start+drang:end+drang],color='r',alpha=0.7)
 
 ax2.plot(sdev[start:end],color='b',alpha=0.5)
 
-plt.show()
+#plt.show()
 
 
 
 print(len(sdev))
 print(len(vdata))
 min=100
-for i in range(len(sdev)):
-    if(vdata[i+drang]==0):
+pi=0
+vi=0
+print(start, end)
+for i in range(start,end):
+    if(vdata[i+drang]>0.5):
         if(sdev[i]<min):
             min = sdev[i]
+            vi = vdata[i+drang]
+            pi = i
+            print(pi)
 
-print(min)
+print(pi,min,vi)
 
-
+plt.show()
